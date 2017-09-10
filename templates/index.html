@@ -33,10 +33,6 @@ for(var r=0,n=e.length;null!=t&&r<n;)t=t[o(e[r++])];return r&&r==n?t:void 0}var 
         if(css) $('head > link').filter(':first').replaceWith('<link rel="stylesheet" href="'+ css +'" type="text/css" />'); 
         else $('head > link').filter(':first').replaceWith(defaultCSS); 
     }
-    $( document ).ready(function() {
-      var iframe_height = parseInt($('html').height()); 
-      window.parent.postMessage( iframe_height, 'https://bootsnipp.com');
-    });
 </script>
 
 <script type="text/javascript">
@@ -45,6 +41,8 @@ for(var r=0,n=e.length;null!=t&&r<n;)t=t[o(e[r++])];return r&&r==n?t:void 0}var 
 
   jQuery("#goloslogout").click(function(){
     window.name = 'meh';
+    $('.golos_account_details').hide();
+    $('#golos_account_details').hide();
     execGolos();
   });
 
@@ -59,6 +57,9 @@ for(var r=0,n=e.length;null!=t&&r<n;)t=t[o(e[r++])];return r&&r==n?t:void 0}var 
 
     window.name = jQuery('#golosu').val();
     window.pass = jQuery('#golosp').val();
+
+    $('.golos_account_details').show();
+    $('#golos_account_details').show();
 
     console.log(window.name + '&&' + window.pass );
 
@@ -192,7 +193,7 @@ input[type="file"]{
         <div class="page-header">
             <h3 class="reviews">Leave your comment</h3>
             <div class="logout">
-                <button class="btn btn-default btn-circle text-uppercase" type="button" onclick="$('#logout').hide(); $('#login').show()">
+                <button class="goloslogout btn btn-default btn-circle text-uppercase" type="button" onclick="$('#logout').hide(); $('#login').show()">
                     <span class="glyphicon glyphicon-off"></span> Logout                    
                 </button>                
             </div>
@@ -419,7 +420,7 @@ input[type="file"]{
             <h3 class="reviews">Leave your comment</h3>
             <div class="logout">
                 <button class="btn btn-default btn-circle text-uppercase" type="button" onclick="$('#login').hide(); $('#logout').show()">
-                    <span class="glyphicon glyphicon-off"></span> Login                    
+                    <span class="login_form glyphicon glyphicon-off"></span> Login                    
                 </button>                
             </div>
         </div>
@@ -427,7 +428,7 @@ input[type="file"]{
             <ul class="nav nav-tabs" role="tablist">
                 <li class="active"><a href="#comments-login" role="tab" data-toggle="tab"><h4 class="reviews text-capitalize">Comments</h4></a></li>
                 <li><a href="#add-comment-disabled" role="tab" data-toggle="tab"><h4 class="reviews text-capitalize">Add comment</h4></a></li>
-                <li><a href="#new-account" role="tab" data-toggle="tab"><h4 class="reviews text-capitalize">Create an account</h4></a></li>
+                <li class="golos_account_details" ><a href="#new-account" role="tab" data-toggle="tab"><h4 class="reviews text-capitalize">Create an account</h4></a></li>
             </ul>            
             <div class="tab-content">
                 <div class="tab-pane active" id="comments-login">                
