@@ -8,7 +8,7 @@ const Blipp = require('blipp');
 const HapiSwagger = require('hapi-swagger');
 const Pack = require('./package');
 const Routes = require('./lib/routes.js');
-
+var golos = require('./golos-js/lib');
 
 var server = new Hapi.Server();
 server.connection({
